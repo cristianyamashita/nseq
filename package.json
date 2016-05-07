@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "homepage": "https://github.com/cristianyamashita/nseq",
+  "repository": "cristianyamashita/nseq",
   "keywords": [
     "callback",
     "async",
