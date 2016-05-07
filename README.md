@@ -1,8 +1,8 @@
 # nseq
 
 ## Introduction
-nseq is a module to simplify the usage of callbacks at Node.Js.\
-This module will not replace the call backs usage, but will simplify it.\
+nseq is a module to simplify the usage of callbacks at Node.Js.<br>
+This module will not replace the call backs usage, but will simplify it.<br>
 Also will reduce the number of infinite indentations, when need to make many functions that depends from call back.
 
 ## Install
@@ -46,7 +46,7 @@ s.do([
 ### constructor([options])
 Constructor can be used to set parameters to be used in the sequences.
 ##### Parameter
-```options``` : (optional): An object with variables.\
+```options``` : (optional): An object with variables.<br>
 Each variable will be accessible as ```self.name_of_variable```
 ##### Return
 Null
@@ -89,8 +89,8 @@ s.add([
 ```
 
 ### do([function_array_list])
-Execute the list of sequences.\
-If a ```function_array_list``` be passed, then first add this to the list of sequences, and then execute.\
+Execute the list of sequences.<br>
+If a ```function_array_list``` be passed, then first add this to the list of sequences, and then execute.<br>
 ##### Parameter
 ```function_array_list``` (optional) : A list of functions to be executed.
 ##### Return
@@ -113,7 +113,7 @@ s.do([
 ```
 
 ### clone()
-Colne an existing nseq object.\
+Colne an existing nseq object.<br>
 Useful to run the same sequence of functions with different parameters. 
 ##### Note:
 This method may not with work with old version of NodeJS, tested with v5.10.0
