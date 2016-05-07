@@ -1,0 +1,18 @@
+{
+  "name": "nseq",
+  "version": "0.0.1",
+  "description": "Easy callback execution in sequence.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/cristianyamashita/nseq",
+  "keywords": [
+    "callback",
+    "async",
+    "sync",
+    "sequence"
+  ],
+  "author": "Cristian Yamashita",
+  "license": "MIT"
+}
