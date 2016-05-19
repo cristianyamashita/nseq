@@ -4,7 +4,7 @@
   "description": "Easy callback execution in sequence.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/test.js"
   },
   "homepage": "https://github.com/cristianyamashita/nseq",
   "repository": "cristianyamashita/nseq",

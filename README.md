@@ -74,7 +74,7 @@ nseq object will be returned, what allow to chain other methods.
 ##### Example
 ```javascript
 var s = new nseq();
-s.add([
+s.do([
   function (self) {
     console.log("This is my 1st sequence");
     self.next();
@@ -219,7 +219,7 @@ s.add([
     connection.query('SELECT session_id from session_table where id=?', [user_id], function(err, rows, fields) {
       if (err) throw err;
       if(rows.length > 0){
-        self.next(rows[0].session_id, user_id);  
+        self.next(rows[0].session_id, user_id); 
       }else{
         self.end("session not found");
       }
