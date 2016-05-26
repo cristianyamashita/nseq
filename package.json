@@ -1,6 +1,6 @@
 {
   "name": "nseq",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Easy callback execution in sequence.",
   "main": "index.js",
   "scripts": {
