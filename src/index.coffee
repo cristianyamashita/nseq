@@ -1,3 +1,4 @@
+objectAssign = require('object-assign');
 class nseq
 	constructor: (options={}) ->
 		this._pos = 0
@@ -15,12 +16,11 @@ class nseq
 		@_arr.push f for f in arr
 		@next this
 		@
-	###
-	Clone may not work in old versions of NodeJS, work in v5.10.0
-	###
+	
 	clone: ()-> 
 		temp = {}
-		Object.assign temp,{},@
+		#Object.assign temp,{},@
+		objectAssign temp,{},@
 		temp = new nseq temp
 		temp
 

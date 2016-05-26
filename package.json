@@ -15,5 +15,8 @@
     "sequence"
   ],
   "author": "Cristian Yamashita",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "object-assign": "^4.1.0"
+  }
 }

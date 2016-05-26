@@ -74,7 +74,7 @@ nseq object will be returned, what allow to chain other methods.
 ##### Example
 ```javascript
 var s = new nseq();
-s.do([
+s.add([
   function (self) {
     console.log("This is my 1st sequence");
     self.next();
@@ -86,6 +86,7 @@ s.do([
     self.next();
   }
 ]);
+s.do();
 ```
 
 ### do([function_array_list])
@@ -115,8 +116,6 @@ s.do([
 ### clone()
 Colne an existing nseq object.<br>
 Useful to run the same sequence of functions with different parameters. 
-##### Note:
-This method may not with work with old version of NodeJS, tested with v5.10.0
 ##### Parameter
 None.
 ##### Return
@@ -242,7 +241,3 @@ s.end = function(err,data){
 // Start the execution
 s.do();
 ```
-## Todo
- - Fix the clone for older versions of NodeJS.
- - Improve the tests.
- - Improve the examples.

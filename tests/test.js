@@ -32,10 +32,7 @@ describe("nseq usage", function() {
 		var s = new nseq({
 			val: 100
 		});
-		s.end = function(val) {
-			assert.equal(200, val);
-			done();
-		};
+		
 		s.add([
 			function(self) {
 				setTimeout(function() {
@@ -52,7 +49,10 @@ describe("nseq usage", function() {
 					self.end(val);
 				}, 10)
 			}
-		])
+		]).end = function(val) {
+			assert.equal(200, val);
+			done();
+		};
 		s.do();
 	});
 
@@ -130,6 +130,39 @@ describe("nseq usage", function() {
 		]);
 		s.do();
 	});
+	
+	it("clone sequence with assert", function(done) {
+		var s = new nseq({
+			val: 100
+		});
+		s.add([
+			function(self) {
+				setTimeout(function() {
+					self.next(self.val + 50);
+				}, 5)
+			},
+			function(self, val) {
+				setTimeout(function() {
+					self.next(val + 50);
+				}, 5)
+			},
+			function(self, val) {
+				setTimeout(function() {
+					self.end(val);
+				}, 5)
+			}
+		]).end = function(val) {
+			assert.equal(200, val);
+			setTimeout(done, 15);
+		};
+		s.do();
+		var s2 = s.clone();
+		s2.val = 90;
+		s2.end = function(val) {
+			assert.equal(200, val);
+		};
+
+	});
 
 	describe.skip('not yet implemented', function() {
 
@@ -139,38 +172,6 @@ describe("nseq usage", function() {
 
 		it("send .end(cb) instead of .end=, or both");
 
-		it("clone sequence with assert", function(done) {
-			var s = new nseq({
-				val: 100
-			});
-			s.end = function(val) {
-				assert.equal(200, val);
-				setTimeout(done, 100);
-			};
-			s.add([
-				function(self) {
-					setTimeout(function() {
-						self.next(self.val + 50);
-					}, 10)
-				},
-				function(self, val) {
-					setTimeout(function() {
-						self.next(val + 50);
-					}, 10)
-				},
-				function(self, val) {
-					setTimeout(function() {
-						self.end(val);
-					}, 10)
-				}
-			])
-			s.do();
-			var s2 = s.clone();
-			s2.val = 90;
-			s2.end = function(val) {
-				assert.equal(200, val);
-			};
-
-		});
+	
 	});
 });
